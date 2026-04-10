@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Semántico y CSS Moderno</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* ===== ESTILOS GENERALES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #2c5364;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* ===== FLEXBOX ===== */
+        .flexbox-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .flexbox-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 250px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* ===== GRID ===== */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background-color: #2c5364;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER SEMÁNTICO ===== -->
+    <header>
+        <h1>HTML Semántico y CSS Moderno</h1>
+        <p>Flexbox y Grid</p>
+    </header>
+
+    <!-- ===== SECCIÓN HTML SEMÁNTICO ===== -->
+    <section>
+        <h2>¿Qué es HTML Semántico?</h2>
+        <p>
+            HTML semántico consiste en usar etiquetas que describen claramente
+            el significado del contenido, mejorando la accesibilidad, el SEO
+            y la comprensión del código.
+        </p>
+
+        <div class="flexbox-container">
+            <div class="flexbox-item">
+                <h3>&lt;header&gt;</h3>
+                <p>Define el encabezado de una página o sección.</p>
+            </div>
+            <div class="flexbox-item">
+                <h3>&lt;section&gt;</h3>
+                <p>Agrupa contenido relacionado dentro de la página.</p>
+            </div>
+            <div class="flexbox-item">
+                <h3>&lt;footer&gt;</h3>
+                <p>Contiene información final como derechos de autor.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN FLEXBOX ===== -->
+    <section>
+        <h2>CSS Flexbox</h2>
+        <p>
+            Flexbox es un modelo de diseño unidimensional que permite
+            organizar elementos en filas o columnas de manera flexible.
+        </p>
+
+        <div class="flexbox-container">
+            <div class="flexbox-item">
+                <h3>display: flex</h3>
+                <p>Activa Flexbox en un contenedor.</p>
+            </div>
+            <div class="flexbox-item">
+                <h3>justify-content</h3>
+                <p>Controla la alineación horizontal.</p>
+            </div>
+            <div class="flexbox-item">
+                <h3>align-items</h3>
+                <p>Controla la alineación vertical.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN GRID ===== -->
+    <section>
+        <h2>CSS Grid</h2>
+        <p>
+            CSS Grid es un sistema de diseño bidimensional que permite
+            crear estructuras complejas con filas y columnas.
+        </p>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <h3>grid-template-columns</h3>
+                <p>Define el número y tamaño de las columnas.</p>
+            </div>
+            <div class="grid-item">
+                <h3>gap</h3>
+                <p>Establece el espacio entre filas y columnas.</p>
+            </div>
+            <div class="grid-item">
+                <h3>auto-fit</h3>
+                <p>Hace el diseño adaptable a cualquier pantalla.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER SEMÁNTICO ===== -->
+    <footer>
+        <p>Exposición - HTML Semántico y CSS Moderno</p>
+    </footer>
+
+</body>
+</html>
