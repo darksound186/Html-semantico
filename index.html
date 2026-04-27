@@ -1,171 +1,176 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>HTML Semántico y CSS Moderno</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>HTML Semántico y CSS Moderno</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        /* ===== ESTILOS GENERALES ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-        body {
-            background-color: #f4f6f8;
-            color: #333;
-            line-height: 1.6;
-        }
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
 
-        header {
-            background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
+    header {
+      min-height: 100vh;
+      background: linear-gradient(
+        rgba(15,23,42,.8),
+        rgba(15,23,42,.95)
+      ),
+      url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+    }
 
-        section {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #38bdf8;
+    }
 
-        h2 {
-            margin-bottom: 20px;
-            color: #2c5364;
-        }
+    section {
+      min-height: 100vh;
+      padding: 80px 10%;
+    }
 
-        p {
-            margin-bottom: 15px;
-        }
+    h2 {
+      font-size: 2.4rem;
+      color: #38bdf8;
+      margin-bottom: 20px;
+    }
 
-        /* ===== FLEXBOX ===== */
-        .flexbox-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+    .flex {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
 
-        .flexbox-item {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            flex: 1;
-            min-width: 250px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+    .card {
+      background: #020617;
+      border-radius: 16px;
+      overflow: hidden;
+      flex: 1;
+      min-width: 260px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.4);
+    }
 
-        /* ===== GRID ===== */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
 
-        .grid-item {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+    .card div {
+      padding: 20px;
+    }
 
-        footer {
-            background-color: #2c5364;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-        }
-    </style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 60px;
+      padding: 16px 32px;
+      background: linear-gradient(90deg,#38bdf8,#0ea5e9);
+      color: #020617;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #020617;
+      color: #94a3b8;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- ===== HEADER SEMÁNTICO ===== -->
-    <header>
-        <h1>HTML Semántico y CSS Moderno</h1>
-        <p>Flexbox y Grid</p>
-    </header>
+  <header>
+    <h1>HTML Semántico & CSS Moderno</h1>
+    <p>Flexbox y Grid aplicados en una página scrolleable</p>
+  </header>
 
-    <!-- ===== SECCIÓN HTML SEMÁNTICO ===== -->
-    <section>
-        <h2>¿Qué es HTML Semántico?</h2>
-        <p>
-            HTML semántico consiste en usar etiquetas que describen claramente
-            el significado del contenido, mejorando la accesibilidad, el SEO
-            y la comprensión del código.
-        </p>
+  <section>
+    <h2>HTML Semántico</h2>
+    <p>Usa etiquetas con significado para mejorar accesibilidad, SEO y mantenimiento.</p>
 
-        <div class="flexbox-container">
-            <div class="flexbox-item">
-                <h3>&lt;header&gt;</h3>
-                <p>Define el encabezado de una página o sección.</p>
-            </div>
-            <div class="flexbox-item">
-                <h3>&lt;section&gt;</h3>
-                <p>Agrupa contenido relacionado dentro de la página.</p>
-            </div>
-            <div class="flexbox-item">
-                <h3>&lt;footer&gt;</h3>
-                <p>Contiene información final como derechos de autor.</p>
-            </div>
+    <div class="flex">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80">
+        <div>
+          <h3>&lt;header&gt;</h3>
+          <p>Encabezado principal de la página.</p>
         </div>
-    </section>
+      </div>
 
-    <!-- ===== SECCIÓN FLEXBOX ===== -->
-    <section>
-        <h2>CSS Flexbox</h2>
-        <p>
-            Flexbox es un modelo de diseño unidimensional que permite
-            organizar elementos en filas o columnas de manera flexible.
-        </p>
-
-        <div class="flexbox-container">
-            <div class="flexbox-item">
-                <h3>display: flex</h3>
-                <p>Activa Flexbox en un contenedor.</p>
-            </div>
-            <div class="flexbox-item">
-                <h3>justify-content</h3>
-                <p>Controla la alineación horizontal.</p>
-            </div>
-            <div class="flexbox-item">
-                <h3>align-items</h3>
-                <p>Controla la alineación vertical.</p>
-            </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80">
+        <div>
+          <h3>&lt;section&gt;</h3>
+          <p>Agrupa contenido relacionado.</p>
         </div>
-    </section>
+      </div>
 
-    <!-- ===== SECCIÓN GRID ===== -->
-    <section>
-        <h2>CSS Grid</h2>
-        <p>
-            CSS Grid es un sistema de diseño bidimensional que permite
-            crear estructuras complejas con filas y columnas.
-        </p>
-
-        <div class="grid-container">
-            <div class="grid-item">
-                <h3>grid-template-columns</h3>
-                <p>Define el número y tamaño de las columnas.</p>
-            </div>
-            <div class="grid-item">
-                <h3>gap</h3>
-                <p>Establece el espacio entre filas y columnas.</p>
-            </div>
-            <div class="grid-item">
-                <h3>auto-fit</h3>
-                <p>Hace el diseño adaptable a cualquier pantalla.</p>
-            </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80">
+        <div>
+          <h3>&lt;footer&gt;</h3>
+          <p>Información final del sitio.</p>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- ===== FOOTER SEMÁNTICO ===== -->
-    <footer>
-        <p>Exposición - HTML Semántico y CSS Moderno</p>
-    </footer>
+    <a href="doble-diamante.html" class="button">💎 Doble Diamante</a>
+  </section>
+
+  <section>
+    <h2>CSS Flexbox</h2>
+    <p>Modelo de diseño unidimensional (filas o columnas).</p>
+
+    <div class="grid">
+      <div class="card"><div><h3>display: flex</h3><p>Activa Flexbox.</p></div></div>
+      <div class="card"><div><h3>justify-content</h3><p>Alineación horizontal.</p></div></div>
+      <div class="card"><div><h3>align-items</h3><p>Alineación vertical.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>CSS Grid</h2>
+    <p>Sistema bidimensional con filas y columnas.</p>
+
+    <div class="grid">
+      <div class="card"><div><h3>grid-template-columns</h3><p>Estructura de columnas.</p></div></div>
+      <div class="card"><div><h3>gap</h3><p>Espacio entre elementos.</p></div></div>
+      <div class="card"><div><h3>auto-fit & minmax</h3><p>Diseño responsive.</p></div></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Exposición académica | HTML y CSS</p>
+  </footer>
 
 </body>
 </html>
